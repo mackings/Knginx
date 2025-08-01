@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: knginx
+spec:
+  selector:
+    matchLabels:
+      app: knginx
+  template:
+    metadata:
+      labels:
+        app: knginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest 
+        ports:
+        - containerPort: 80
